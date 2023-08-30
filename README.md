@@ -5,4 +5,4 @@
  https://processing.org/download
 
  ## Download
-Just Download the zip file before extract it.
+Before extracting, please download the zip file.
