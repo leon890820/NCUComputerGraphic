@@ -9,8 +9,9 @@ public class ShapeRenderer{
     }
     
     public void run(){      
-      if(renderer!=null) renderer.render();
+      
       shapes.forEach(Shape::drawShape);
+      if(renderer!=null) renderer.render();
     }
     
     public void setRenderer(Renderer r){
@@ -45,6 +46,7 @@ public class PencilRenderer implements Renderer{
     private boolean once;
     @Override 
     public void render(){
+        if(!shapeRenderer.checkInBox(new Vector3(mouseX,mouseY,0))) return;
         if(mousePressed){
             once = false;
             points.add(new Vector3(mouseX,mouseY,0));
@@ -221,12 +223,15 @@ class EraserRenderer implements Renderer{
   @Override
   public void render(){
       if(!shapeRenderer.checkInBox(new Vector3(mouseX,mouseY,0))) return;
+      loadPixels();
       noFill();
       stroke(0);
       rect(mouseX - eraserSize/2,mouseY - eraserSize/2,eraserSize,eraserSize);
       if(mousePressed&& mouseButton == LEFT){
-          CGEraser(new Vector3(mouseX - eraserSize/2,mouseY - eraserSize/2,0),new Vector3(mouseX + eraserSize/2,mouseY + eraserSize/2,0));
+          shapeRenderer.addShape(new EraseArea(new Vector3(mouseX - eraserSize/2,mouseY - eraserSize/2,0),new Vector3(mouseX + eraserSize/2,mouseY + eraserSize/2,0)));
+          
       }
+     
   }
 
 }

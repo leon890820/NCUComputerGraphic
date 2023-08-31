@@ -7,11 +7,12 @@ public void CGLine(float x1,float y1,float x2,float y2){
     //Utilize the function drawPoint(x, y, color) to apply color to the pixel at coordinates (x, y).
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0).   
     
-    /*
+    
+    debugMode = true;
     stroke(0);
     noFill();
     line(x1,y1,x2,y2);
-    */
+
          
     
 }
@@ -25,11 +26,13 @@ public void CGCircle(float x,float y,float r){
        
     //Utilize the function drawPoint(x, y, color) to apply color to the pixel at coordinates (x, y).
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0).         
-    /*
+    
+    
+    debugMode = true;
     stroke(0);
     noFill();
     circle(x,y,r*2);
-    */          
+        
 }
 
 public void CGEllipse(float x,float y,float r1,float r2){
@@ -40,11 +43,12 @@ public void CGEllipse(float x,float y,float r1,float r2){
        
     //Utilize the function drawPoint(x, y, color) to apply color to the pixel at coordinates (x, y).
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0).         
-    /*  
+      
+    debugMode = true;
     stroke(0);
     noFill();
     ellipse(x,y,r1*2,r2*2);
-    */ 
+
       
 }
 
@@ -57,11 +61,11 @@ public void CGCurve(Vector3 p1,Vector3 p2,Vector3 p3,Vector3 p4){
     //Utilize the function drawPoint(x, y, color) to apply color to the pixel at coordinates (x, y).
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0). 
     
-    /*
+    debugMode = true;
     stroke(0);
     noFill();
     bezier(p1.x,p1.y,p2.x,p2.y,p3.x,p3.y,p4.x,p4.y);
-    */
+
 }
 
 public void CGEraser(Vector3 p1,Vector3 p2){
@@ -76,11 +80,21 @@ public void CGEraser(Vector3 p1,Vector3 p2){
     
     //Utilize the function drawPoint(x, y, color) to apply color to the pixel at coordinates (x, y).
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0). 
+    //drawPoint(0,0,color(250));
+    for(int i=(int)p1.y;i<=p2.y;i++){
+        for(int j=(int)p1.x;j<=p2.x;j++){
+            drawPoint(j,i,color(250));
+        }
+    }
+    updatePixels();
+
+
 
 }
 
 public void drawPoint(float x,float y,color c){
-    loadPixels();
+
+
     int index = (int)y * width + (int)x;
     pixels[index] = c;
     

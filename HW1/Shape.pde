@@ -100,3 +100,15 @@ public class Curve implements Shape{
         CGCurve(cpoint1,cpoint2,cpoint3,cpoint4);
     }
 }
+
+public class EraseArea implements Shape{
+    Vector3 point1,point2;
+    public EraseArea(){}
+    public EraseArea(Vector3 p1,Vector3 p2){
+       point1 = p1; point2 = p2; 
+    }
+    @Override
+    public void drawShape(){
+        CGEraser(point1,point2);
+    }
+}
