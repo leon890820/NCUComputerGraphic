@@ -6,3 +6,8 @@
 
  ## Download
 Before extracting, please download the zip file.
+
+## Document
+
+- [Lab0](https://hackmd.io/@leon890820/Sk_lqMopn)
+- [Lab1](https://hackmd.io/@leon890820/SyUgjGap3)
