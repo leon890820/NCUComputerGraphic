@@ -223,7 +223,7 @@ class EraserRenderer implements Renderer{
   @Override
   public void render(){
       if(!shapeRenderer.checkInBox(new Vector3(mouseX,mouseY,0))) return;
-      loadPixels();
+     // loadPixels();
       noFill();
       stroke(0);
       rect(mouseX - eraserSize/2,mouseY - eraserSize/2,eraserSize,eraserSize);
@@ -231,6 +231,7 @@ class EraserRenderer implements Renderer{
           shapeRenderer.addShape(new EraseArea(new Vector3(mouseX - eraserSize/2,mouseY - eraserSize/2,0),new Vector3(mouseX + eraserSize/2,mouseY + eraserSize/2,0)));
           
       }
+      //updatePixels();
      
   }
 

@@ -6,8 +6,8 @@ public void CGLine(float x1,float y1,float x2,float y2){
        
     //Utilize the function drawPoint(x, y, color) to apply color to the pixel at coordinates (x, y).
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0).   
-    /*   
-    debugMode = true;
+       
+    /*
     stroke(0);
     noFill();
     line(x1,y1,x2,y2);
@@ -27,7 +27,6 @@ public void CGCircle(float x,float y,float r){
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0).         
     
     /*
-    debugMode = true;
     stroke(0);
     noFill();
     circle(x,y,r*2);
@@ -44,7 +43,6 @@ public void CGEllipse(float x,float y,float r1,float r2){
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0).         
       
     /*  
-    debugMode = true;
     stroke(0);
     noFill();
     ellipse(x,y,r1*2,r2*2);
@@ -62,7 +60,6 @@ public void CGCurve(Vector3 p1,Vector3 p2,Vector3 p3,Vector3 p4){
     //For instance: drawPoint(0, 0, color(255, 0, 0)); signifies drawing a red point at (0, 0). 
     
     /*
-    debugMode = true;
     stroke(0);
     noFill();
     bezier(p1.x,p1.y,p2.x,p2.y,p3.x,p3.y,p4.x,p4.y);
@@ -87,8 +84,8 @@ public void CGEraser(Vector3 p1,Vector3 p2){
 }
 
 public void drawPoint(float x,float y,color c){
-    int index = (int)y * width + (int)x;
-    pixels[index] = c;    
+    fill(c);
+    point(x,y);
 }
 
 public float distance(Vector3 a,Vector3 b){

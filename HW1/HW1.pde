@@ -10,8 +10,6 @@ Button clearButton;
 
 ShapeRenderer shapeRenderer;
 ArrayList<ShapeButton> shapeButton;
-boolean debugMode = false;
-
 float eraserSize = 20;
 
 public void setup(){
@@ -35,12 +33,8 @@ public void draw(){
     clearButton.run(()->{shapeRenderer.clear();});
     shapeRenderer.box.show();
 
-    if(debugMode)shapeRenderer.run();
-    else{
-      loadPixels();
-      shapeRenderer.run();
-      updatePixels();
-    }
+    shapeRenderer.run();
+   
     
 }
 
