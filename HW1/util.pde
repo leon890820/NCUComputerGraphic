@@ -84,7 +84,7 @@ public void CGEraser(Vector3 p1,Vector3 p2){
 }
 
 public void drawPoint(float x,float y,color c){
-    fill(c);
+    stroke(c);
     point(x,y);
 }
 

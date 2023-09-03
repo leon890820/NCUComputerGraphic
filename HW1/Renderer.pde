@@ -75,7 +75,7 @@ public class LineRenderer implements Renderer{
     private Vector3 second_point;
     
     @Override
-    void render(){
+    public void render(){
         if(!shapeRenderer.checkInBox(new Vector3(mouseX,mouseY,0))) return;
         if(mousePressed&& mouseButton == LEFT){
             if(!once){
@@ -109,7 +109,7 @@ public class CircleRenderer implements Renderer{
     private Vector3 second_point;
     
     @Override
-    void render(){
+    public void render(){
         if(!shapeRenderer.checkInBox(new Vector3(mouseX,mouseY,0))) return;
         if(mousePressed&& mouseButton == LEFT){
               if(!once){
@@ -141,7 +141,7 @@ public class PolygonRenderer implements Renderer{
     private ArrayList<Vector3> verties = new ArrayList<Vector3>();
   
     @Override
-    void render(){
+    public void render(){
         if(!shapeRenderer.checkInBox(new Vector3(mouseX,mouseY,0))) return;
         if(mousePressed&& mouseButton == LEFT){
             if(!once){
