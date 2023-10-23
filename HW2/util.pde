@@ -3,9 +3,6 @@ public void CGLine(float x1,float y1,float x2,float y2){
     
     
 }
-
-
-
 public boolean outOfBoundary(float x,float y){
     if(x < 0 || x >= width || y < 0 || y >= height) return true;
     return false;
