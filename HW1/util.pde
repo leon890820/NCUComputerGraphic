@@ -81,6 +81,8 @@ public void CGEraser(Vector3 p1,Vector3 p2){
     //drawPoint(0,0,color(250));
     
 
+    
+ 
 }
 
 public void drawPoint(float x,float y,color c){
