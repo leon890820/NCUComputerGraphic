@@ -26,11 +26,6 @@ boolean pnpoly(float x, float y, Vector3[] vertexes) {
 
     boolean c = false;
 
-    for (int i=0, j=vertexes.length-1; i<vertexes.length; j=i++) {
-        if (((vertexes[i].y>y)!=(vertexes[j].y>y))&&(x<(vertexes[j].x-vertexes[i].x)*(y-vertexes[i].y)/(vertexes[j].y-vertexes[i].y)+vertexes[i].x)) {
-            c=!c;
-        }
-    }
 
     return c;
 }
@@ -46,16 +41,7 @@ public Vector3[] findBoundBox(Vector3[] v) {
     //       |  /  \ |
     //       | /____\|
     //        ------- r2
-    for (int i=0; i<v.length; i+=1) {
-        recordmaxV.x=max(recordmaxV.x, v[i].x);
-        recordminV.x=min(recordminV.x, v[i].x);
 
-        recordmaxV.y=max(recordmaxV.y, v[i].y);
-        recordminV.y=min(recordminV.y, v[i].y);
-
-        recordmaxV.z=max(recordmaxV.z, v[i].z);
-        recordminV.z=min(recordminV.z, v[i].z);
-    }
 
     Vector3[] result={recordminV, recordmaxV};
     return result;
